@@ -188,12 +188,16 @@ if __name__ == "__main__":
             formatted_blogs = "\n".join(parsed_content.get('Blogs', []))
 
             user_prompt = f"""
-            Please intenrally link from {formatted_image_urls}  You are an SEO-Content generator. You follow the {article_tone} and copy the tone of {famous_person} Try to mimic their style completely. (if blank then copy only the tone) Write a long-form SEO-Optimized article with 1500 words. You must include at least 3 embedded images, although 10 is preferred. Do not invent links. Do not invent information. Generate a detailed 20 titles and subtitles and 2 paragraphs per title or subtitle. Create a {content_type} using the selected image URLs, blogs, and brand images, output in Markdown, with a lot of interesting formatting such as lists, tables, internal links and embedded images. This helps with ranking on Google. The end result should be a journalistic style piece of content on the topic.:
+            Please internally link from the list of pages on the website from {select_relevant_content}. You are an SEO-Content generator. You follow the {article_tone} and copy the tone of {famous_person}. Try to mimic their style completely (if blank then copy only the tone). Write a long-form SEO-Optimized article with 1500 words. You must include at least 3 embedded images, although 10 is preferred. Do not invent links. Do not invent information. Generate a detailed 20 titles and subtitles and 2 paragraphs per title or subtitle. Create a {content_type} using the selected image URLs, blogs, and brand images, output in Markdown, with a lot of interesting formatting such as lists, tables, internal links, and embedded images. This helps with ranking on Google. The end result should be a journalistic style piece of content on the topic.
+            
+            Selected Content:
             Image URLs:
             {formatted_image_urls}
 
             Blogs:
             {formatted_blogs}
+
+            When incorporating the image URLs in the generated content, please use the corresponding page URLs as internal links. For example, if an image URL is associated with a specific page URL, use the page URL as the link destination when referencing that image in the content.
 
             Please ensure the content is relevant and engaging, utilizing the provided information effectively.
             The content should be written in a {article_tone} tone and framed as {article_framing}.
