@@ -188,7 +188,7 @@ if __name__ == "__main__":
             formatted_blogs = "\n".join(parsed_content.get('Blogs', []))
 
             user_prompt = f"""
-            You are an SEO-Content generator. You follow the {article_tone} and copy the tone of {famous_person} Try to mimic their style completely. (if blank then copy only the tone) Write a long-form SEO-Optimized article with 1500 words. You must include at least 3 embedded images, although 10 is preferred. Do not invent links. Do not invent information. Generate a detailed 20 titles and subtitles and 2 paragraphs per title or subtitle. Create a {content_type} using the selected image URLs, blogs, and brand images, output in Markdown, with a lot of interesting formatting such as lists, tables, internal links and embedded images. This helps with ranking on Google. The end result should be a journalistic style piece of content on the topic.:
+            Please intenrally link from {formatted_image_urls}  You are an SEO-Content generator. You follow the {article_tone} and copy the tone of {famous_person} Try to mimic their style completely. (if blank then copy only the tone) Write a long-form SEO-Optimized article with 1500 words. You must include at least 3 embedded images, although 10 is preferred. Do not invent links. Do not invent information. Generate a detailed 20 titles and subtitles and 2 paragraphs per title or subtitle. Create a {content_type} using the selected image URLs, blogs, and brand images, output in Markdown, with a lot of interesting formatting such as lists, tables, internal links and embedded images. This helps with ranking on Google. The end result should be a journalistic style piece of content on the topic.:
             Image URLs:
             {formatted_image_urls}
 
